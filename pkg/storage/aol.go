@@ -64,7 +64,7 @@ type segment struct {
 	path  string //path of the segment file
 	index uint64 //first index of the segment
 	cbuf  []byte //cached entries buffer
-	cpos  []bpos //cached entries positions in bugger
+	cpos  []bpos //cached entries positions in buffer
 }
 
 type bpos struct {
@@ -205,7 +205,6 @@ func (l *Log) cycle() error {
 		path:  filepath.Join(l.path, segmentName(nidx)),
 	}
 
-	var err error
 	l.sfile, err = os.OpenFile(s.path, os.O_CREATE|os.O_RDWR|os.O_TRUNC, l.opts.FilePermissions)
 	if err != nil {
 		return nil
