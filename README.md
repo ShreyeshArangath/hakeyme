@@ -15,3 +15,8 @@ hakeyme is a simple key-value store
 - I/O problems with disk access and use of file system 
 - Concurrency control 
 
+
+
+## References 
+
+[Append-Only Log](https://github.com/arriqaaq/aol/blob/main/aol.go)
